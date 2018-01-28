@@ -1,0 +1,36 @@
+<!-- Código html que mostra a posição do mouse na página
+	Arquitetura e Organização de Computadores 2017 - UFRR
+	Talles Bezerra de Assunção
+	Foi utilizado como referência o código diponível no fórum http://forum.wmonline.com.br/topic/74557-posicao-coordenadas-xy-do-mouse-no-navegador/ disponibilizado pelo usuário Nicholas Pufal
+	O código possui algumas modificações e foi testado em uma tela com resolução 1366x768, mas deve
+	funcionar para qualquer resolução de tela
+-->
+
+<style>
+#x{
+	position: fixed;
+	top: 20px;
+}
+
+#y{
+	position: fixed;
+	top: 40px;
+}
+</style>
+
+<script>
+document.onmousemove = getMouseXY;
+function getMouseXY(e) {
+	document.getElementById("vx").innerHTML = event.clientX;
+	document.getElementById("vy").innerHTML = event.clientY;
+	return true;
+}
+</script>
+
+<!DOCTYPE html>
+<html>
+<body>
+<div id="x">X <span id="vx"></span></div>
+<div id="y">Y  <span id="vy"></span></div>
+</body>
+</html>
